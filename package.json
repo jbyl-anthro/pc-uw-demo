@@ -2,7 +2,7 @@
   "name": "pc-uw-demo",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://jbyl-anthro.github.io/pc-uw-demo",
   "dependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/plus-jakarta-sans": "^5.2.8",

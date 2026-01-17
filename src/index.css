@@ -1,0 +1,78 @@
+@import '@fontsource/plus-jakarta-sans/400.css';
+@import '@fontsource/plus-jakarta-sans/500.css';
+@import '@fontsource/plus-jakarta-sans/600.css';
+@import '@fontsource/plus-jakarta-sans/700.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-navy-900 text-gray-100 font-body antialiased;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-navy-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-navy-600 rounded-full hover:bg-navy-500;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-navy-800/50 backdrop-blur-xl border border-white/10 rounded-xl;
+  }
+
+  .metric-card {
+    @apply glass-card p-6 hover:border-electric-500/30 transition-all duration-300;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-success {
+    @apply bg-success-500/20 text-success-400 border border-success-500/30;
+  }
+
+  .status-warning {
+    @apply bg-warning-500/20 text-warning-400 border border-warning-500/30;
+  }
+
+  .status-processing {
+    @apply bg-electric-500/20 text-electric-400 border border-electric-500/30;
+  }
+
+  .status-error {
+    @apply bg-danger-500/20 text-danger-400 border border-danger-500/30;
+  }
+
+  .btn-primary {
+    @apply px-4 py-2 bg-electric-500 hover:bg-electric-600 text-white rounded-lg font-medium transition-all duration-200 flex items-center gap-2;
+  }
+
+  .btn-secondary {
+    @apply px-4 py-2 bg-navy-700 hover:bg-navy-600 text-white rounded-lg font-medium transition-all duration-200 flex items-center gap-2;
+  }
+
+  .nav-tab {
+    @apply px-4 py-3 text-sm font-medium transition-all relative;
+  }
+
+  .nav-tab-active {
+    @apply text-electric-400;
+  }
+
+  .nav-tab-inactive {
+    @apply text-gray-400 hover:text-white;
+  }
+}

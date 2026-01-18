@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { WorkflowType, DashboardMetrics } from '../data/types';
 
-type Section = 'dashboard' | 'architecture' | 'workflows' | 'compliance' | 'documents';
+type Section = 'overview' | 'architecture' | 'dashboard' | 'workflows' | 'documents' | 'compliance';
 
 interface DemoState {
   // Navigation
@@ -56,7 +56,7 @@ const initialMetrics: DashboardMetrics = {
 
 export const useDemoStore = create<DemoState>((set) => ({
   // Navigation
-  activeSection: 'dashboard',
+  activeSection: 'overview',
   setActiveSection: (section) => set({ activeSection: section }),
 
   // Workflow Simulation

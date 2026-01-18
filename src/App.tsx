@@ -6,19 +6,22 @@ import {
   Zap,
   FileText,
   Shield,
+  Home,
 } from 'lucide-react';
 import { useDemoStore } from './store/demoStore';
+import ExecutiveOverview from './components/overview/ExecutiveOverview';
 import ExecutiveDashboard from './components/dashboard/ExecutiveDashboard';
 import AgentArchitecture from './components/agents/AgentArchitecture';
 import WorkflowSimulator from './components/workflows/WorkflowSimulator';
 import DocumentIntelligence from './components/documents/DocumentIntelligence';
 import ComplianceDashboard from './components/compliance/ComplianceDashboard';
 
-type Section = 'dashboard' | 'architecture' | 'workflows' | 'documents' | 'compliance';
+type Section = 'overview' | 'architecture' | 'dashboard' | 'workflows' | 'documents' | 'compliance';
 
 const sections: { id: Section; label: string; icon: React.ReactNode }[] = [
-  { id: 'dashboard', label: 'Operations Center', icon: <LayoutDashboard className="w-4 h-4" /> },
+  { id: 'overview', label: 'Overview', icon: <Home className="w-4 h-4" /> },
   { id: 'architecture', label: 'Agent Architecture', icon: <Network className="w-4 h-4" /> },
+  { id: 'dashboard', label: 'Operations Center', icon: <LayoutDashboard className="w-4 h-4" /> },
   { id: 'workflows', label: 'Live Workflows', icon: <Zap className="w-4 h-4" /> },
   { id: 'documents', label: 'Document Intelligence', icon: <FileText className="w-4 h-4" /> },
   { id: 'compliance', label: 'Audit & Compliance', icon: <Shield className="w-4 h-4" /> },
@@ -29,10 +32,12 @@ function App() {
 
   const renderSection = () => {
     switch (activeSection) {
-      case 'dashboard':
-        return <ExecutiveDashboard />;
+      case 'overview':
+        return <ExecutiveOverview />;
       case 'architecture':
         return <AgentArchitecture />;
+      case 'dashboard':
+        return <ExecutiveDashboard />;
       case 'workflows':
         return <WorkflowSimulator />;
       case 'documents':
@@ -40,7 +45,7 @@ function App() {
       case 'compliance':
         return <ComplianceDashboard />;
       default:
-        return <ExecutiveDashboard />;
+        return <ExecutiveOverview />;
     }
   };
 
